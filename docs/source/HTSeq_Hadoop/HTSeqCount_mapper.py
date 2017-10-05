@@ -38,6 +38,8 @@ def main():
 	from subprocess import call
 	cmd = ["htseq-count", "--type="+args['type'], "--idattr="+args['idattr'], "--mode="+args['mode']]
 	if args['quiet']: cmd.append("--quiet")
+	cmd.append("--stranded=yes")
+	cmd.append("--additional-attr=gene_name")
 	cmd+=["-", gffFile] 
 
 				#print cmd
